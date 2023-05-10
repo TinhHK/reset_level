@@ -3,7 +3,7 @@
 use Bookstore\Domain\Book;
 use Bookstore\Domain\Customer;
 
-function __autoload($classname) {
+function autoloadSrc($classname) {
     $lastSlash = strpos($classname, '\\') + 1;
     $classname = substr($classname, $lastSlash);
     $directory = str_replace('\\', '/', $classname);
@@ -11,7 +11,7 @@ function __autoload($classname) {
     require_once $filename;
 }
 
-
+spl_autoload_register('autoloadSrc');
 
 $customer2 = new Customer(1, 'Mary', 'Poppins', 'mp@mail.com');
 
