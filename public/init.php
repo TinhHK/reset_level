@@ -15,4 +15,4 @@ spl_autoload_register('autoloadSrc');
 
 $customer2 = new Customer(1, 'Mary', 'Poppins', 'mp@mail.com');
 
-var_dump(Customer::getLastId());
+var_dump($customer2);
